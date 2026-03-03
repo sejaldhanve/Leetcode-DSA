@@ -3,13 +3,10 @@ class Solution {
         int greatest=0;
         List<Boolean> list=new ArrayList<>();
         for(int i=0;i<candies.length;i++){
-            if(candies[i]>greatest){
-                greatest=candies[i];
-            }
+            greatest=Math.max(greatest,candies[i]);
         }
         for(int i=0;i<candies.length;i++){
-            int sum=candies[i]+extraCandies;
-            if(sum>=greatest){
+            if(candies[i]+extraCandies>=greatest){
                 list.add(true);
             }
             else{
