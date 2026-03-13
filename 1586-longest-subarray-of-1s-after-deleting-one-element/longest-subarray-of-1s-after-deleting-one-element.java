@@ -8,13 +8,12 @@ class Solution {
         while(r<nums.length){
             if(nums[r]==0){
                 zero++;
-                while(zero>1){
-                    if(nums[l]==0){
-                        zero--;
-                    }
-                    l++;
+            }
+            if(zero>1){
+                if(nums[l]==0){
+                    zero--;
                 }
-                
+                l++;
             }
         maxlen=Math.max(maxlen, r-l);
         r++;
