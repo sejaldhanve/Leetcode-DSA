@@ -5,9 +5,7 @@ class Solution {
         int highest=0;
         for(int i=1;i<=gain.length;i++){
             newarr[i]=newarr[i-1]+gain[i-1];
-            if(newarr[i]>highest){
-                highest=newarr[i];
-            }
+            highest=Math.max(highest,newarr[i]);
 
         }
     return highest;  
