@@ -15,10 +15,7 @@
  */
 class Solution {
     public boolean isBalanced(TreeNode root) {
-        if(check(root)!= -1){
-            return true;
-        }
-        return false;
+        return check(root)!=-1;
 
         
     }
