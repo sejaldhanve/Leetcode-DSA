@@ -18,7 +18,6 @@ class Solution {
     public int maxPathSum(TreeNode root) {
         calculate(root);
         return maxi;
-        
     }
     private int calculate(TreeNode root){
         if(root==null){
@@ -27,7 +26,7 @@ class Solution {
         int lh=Math.max(calculate(root.left),0);
         int rh=Math.max(calculate(root.right),0);
 
-        maxi=Math.max(maxi, lh+rh+root.val);
+        maxi=Math.max(maxi,lh+rh+root.val);
 
         return Math.max(lh,rh)+root.val;
     }
