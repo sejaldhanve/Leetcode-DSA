@@ -15,7 +15,7 @@
  */
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
-        TreeNode cur=new TreeNode();
+        TreeNode cur=root;
         cur=root;
         if(root==null){
             return new TreeNode(val);
