@@ -15,7 +15,7 @@
  */
 class Solution {
     public int findSecondMinimumValue(TreeNode root) {
-        if(root==null || root.right==null){
+        if(root==null || root.left==null){
             return -1;
         }
         int left=root.left.val;
