@@ -15,16 +15,15 @@ class Solution {
             }    
         }
         int count1=0;
-        int ans=0;
         for(int i=0;i<nums.length;i++){
             if(nums[i]==el){
                 count1++;
             }
         }
         if(count1>nums.length/2){
-            ans=el;
+            return el;
         }
-        return el;
+        return -1;
 
     }
 }
