@@ -13,7 +13,7 @@ class Solution {
         int n=grid.length;
         int m=grid[0].length;
         int[][] vis=new int[n][m];
-
+        int cntFresh=0;
         Queue<Node> q=new LinkedList();
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
@@ -24,12 +24,17 @@ class Solution {
                 else{
                     vis[i][j]=0;
                 }
+                
+                if(grid[i][j]==1){
+                    cntFresh++;
+                }
             }
         }
 
         int tm=0;
         int[] deltaRow={-1, 0, 1, 0};
         int[] deltaCol={0, 1, 0, -1};
+        int cnt=0;
         while(!q.isEmpty()){
             int row=q.peek().first;
             int col=q.peek().second;
@@ -43,17 +48,14 @@ class Solution {
                 if(nrow>=0 && nrow<n && ncol>=0 && ncol<m && grid[nrow][ncol]==1 && vis[nrow][ncol]==0){
                     q.add(new Node(nrow, ncol, t+1));
                     vis[nrow][ncol]=2;
+                    cnt++;
                 }
 
             }
             
         }
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(vis[i][j]!=2 && grid[i][j]==1){
-                    return -1;
-                }
-            }
+        if(cntFresh!=cnt){
+            return -1;
         }
 
         return tm;   
