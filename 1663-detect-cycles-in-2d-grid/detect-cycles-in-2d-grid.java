@@ -11,7 +11,7 @@ class Solution {
                         return true;
                     }
                 }
-                else if(nrow!=parentRow && ncol!=parentCol){
+                else if(nrow!=parentRow || ncol!=parentCol){
                     return true;
                 }
             }
