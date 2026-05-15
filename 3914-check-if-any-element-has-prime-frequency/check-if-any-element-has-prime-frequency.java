@@ -8,22 +8,25 @@ class Solution {
         }
 
         for(int freq:map.values()){
-            if(freq<2){
-                continue;
-            }
-            boolean isPrime=true;
-            for(int i=2;i*i<=freq;i++){
-                if(freq%i==0){
-                    isPrime=false;
-                    break;
-                }
-            }
-            if(isPrime){
+            if(isPrime(freq)){
                 return true;
             }
         }
         
         return false;
         
+    }
+    private boolean isPrime(int n){
+        if(n<2){
+            return false;
+        }
+        boolean isPrime=true;
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+
     }
 }
