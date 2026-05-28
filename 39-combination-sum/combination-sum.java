@@ -1,14 +1,14 @@
 class Solution {
     private void printSub(int index, int[] candidates, int target, int sum, List<List<Integer>> list, List<Integer> subList){
         if(index>=candidates.length){
-            if(target==0){
+            if(sum==target){
                 list.add(new ArrayList<>(subList));
             }
             return;
         }
-        if(candidates[index]<=target){
+        if(sum+candidates[index]<=target){
             subList.add(candidates[index]);
-            printSub(index, candidates, target-candidates[index], sum, list, subList);
+            printSub(index, candidates, target, sum+candidates[index], list, subList);
             subList.remove(subList.size()-1);
         }
         printSub(index+1, candidates, target, sum, list, subList);
