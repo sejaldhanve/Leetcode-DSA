@@ -18,12 +18,12 @@ class Solution {
         HashMap<Integer, TreeNode> map=new HashMap<>();
         HashSet<Integer> children=new HashSet<>();
 
-        for(int[] d:descriptions){
-            int parent=d[0];
-            int child=d[1];
-            int isLeft=d[2];
-            map.putIfAbsent(parent, new TreeNode(d[0]));
-            map.putIfAbsent(child, new TreeNode(d[1]));
+        for(int[] desc:descriptions){
+            int parent=desc[0];
+            int child=desc[1];
+            int isLeft=desc[2];
+            map.putIfAbsent(parent, new TreeNode(desc[0]));
+            map.putIfAbsent(child, new TreeNode(desc[1]));
 
             TreeNode pval=map.get(parent);
             TreeNode cval=map.get(child);
