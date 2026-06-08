@@ -1,6 +1,5 @@
 class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
-        int pivotInd=0;
         int[] ans=new int[nums.length];
         List<Integer> list=new ArrayList<>();
         
@@ -21,7 +20,7 @@ class Solution {
         }
 
 
-        for(int i=0;i<list.size();i++){
+        for(int i=0;i<nums.length;i++){
             ans[i]=list.get(i);
         }
 
