@@ -1,23 +1,19 @@
 class Solution {
-    private int mini(int i, int[] cost, int[] dp){
-        if(i==0 || i==1){
-            return cost[i];
-        }
-        
-        if(dp[i]!=-1){
-            return dp[i];
-        }
-
-        int take=mini(i-1, cost, dp);
-        int nottake=mini(i-2, cost, dp);
-
-        return dp[i]=cost[i]+(Math.min(take, nottake));
-    }
     public int minCostClimbingStairs(int[] cost) {
-        int i=cost.length;
         int[] dp=new int[cost.length+1];
-        Arrays.fill(dp, -1);
-        return Math.min(mini(i-1, cost, dp), mini(i-2, cost, dp));
+        int n=cost.length;
+
+        dp[0]=cost[0];
+        dp[1]=cost[1];
+
+        for(int i=2;i<cost.length;i++){
+            int take=dp[i-1];
+            int nottake=dp[i-2];
+
+            dp[i]=cost[i]+Math.min(take, nottake);
+        }
+
+        return Math.min(dp[n-1], dp[n-2]);
 
         
     }
