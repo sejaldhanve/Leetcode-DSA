@@ -6,7 +6,7 @@ class Solution {
             if(Character.isLetter(s.charAt(i))){
                 st.push(s.charAt(i));
             }
-            else if(Character.isDigit(s.charAt(i))){
+            else{
                 if(!st.isEmpty()){
                     st.pop();
                 }
