@@ -1,7 +1,7 @@
 class Solution {
+    int[][] dir={{0,1}, {0,-1}, {1,0}, {-1,0}};
     public int maximumSafenessFactor(List<List<Integer>> grid) {
         int n=grid.size();
-        int[][] dir={{0,1}, {0,-1}, {1,0}, {-1,0}};
         int[][] dist=new int[n][n];
         for(int[] row:dist){
             Arrays.fill(row, -1);
@@ -51,7 +51,6 @@ class Solution {
     }
     private boolean canReach(int[][] dist, int safe){
         int n=dist.length;
-        int[][] dir={{0,1}, {0,-1}, {1,0}, {-1,0}};
         if(dist[0][0]<safe){
             return false;
         }
