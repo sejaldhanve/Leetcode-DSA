@@ -38,7 +38,7 @@ class Solution {
         int high=2*n;
         int ans=0;
         while(low<=high){
-            int mid=(low+high)/2;
+            int mid=low+(high-low)/2;
             if(canReach(dist, mid)){
                 ans=mid;
                 low=mid+1;
