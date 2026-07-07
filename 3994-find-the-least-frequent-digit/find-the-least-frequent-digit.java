@@ -12,19 +12,12 @@ class Solution {
         }
 
         for(int i=0;i<freq.length;i++){
-            if(freq[i]>0){
-                minFreq=Math.min(freq[i], minFreq);
+            if(freq[i]>0 && freq[i]<minFreq){
+                minFreq=freq[i];
+                mini=i;
             }
         }
-        for(int i=0;i<freq.length;i++){
-            if(freq[i]==minFreq){
-                list.add(i);
-            }
-        }
-        for(int i=0;i<list.size();i++){
-            mini=Math.min(mini, list.get(i));
-        }
-
+        
         return mini;
         
     }
