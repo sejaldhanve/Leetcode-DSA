@@ -8,15 +8,20 @@ class Solution {
             list.add(rem);
             n=n/10;
         }
-
+        int largest=0;
+        int sec=0;
         for(int i=0;i<list.size();i++){
-            for(int j=i+1;j<list.size();j++){
-                product=list.get(i)*list.get(j);
-                maxi=Math.max(maxi, product);
+            if(list.get(i)>largest){
+                sec=largest;
+                largest=list.get(i);
             }
+            else if(list.get(i)>sec){
+                sec=list.get(i);
+            }
+
         }
 
-        return maxi;
+        return largest*sec;
         
     }
 }
