@@ -3,7 +3,7 @@ class Solution {
         int l=0;
         int r=height.length-1;
         int area=0;
-        int maxArea=Integer.MIN_VALUE;
+        int maxArea=0;
 
         while(l<r){
             int mini=Math.min(height[l], height[r]);
