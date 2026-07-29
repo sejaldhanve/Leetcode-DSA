@@ -14,20 +14,26 @@
  * }
  */
 class Solution {
-    private boolean symm(TreeNode root, TreeNode left, TreeNode right){
+    private boolean symm(TreeNode left, TreeNode right){
         if(left==null && right==null){
             return true;
         }
+
         if(left==null || right==null){
             return false;
         }
+
         if(left.val!=right.val){
             return false;
         }
-        return symm(root, left.left, right.right) && symm(root, left.right, right.left);
+
+        return symm(left.left, right.right) && symm(left.right, right.left);
+
+
     }
     public boolean isSymmetric(TreeNode root) {
-        return symm(root, root.left, root.right);
+        return symm(root.left, root.right);
+
        
     }
 }
