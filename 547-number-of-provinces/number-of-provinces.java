@@ -10,7 +10,7 @@ class Solution {
     public int findCircleNum(int[][] isConnected) {
         int count=0;
         ArrayList<ArrayList<Integer>> adjList=new ArrayList<>();
-        for(int i=0;i<=isConnected.length;i++){
+        for(int i=0;i<isConnected.length;i++){
             adjList.add(new ArrayList<>());
         }
 
@@ -29,6 +29,6 @@ class Solution {
                 dfs(i, isConnected, adjList, vis);
             }
         }
-        return count-1;
+        return count;
     }
 }
