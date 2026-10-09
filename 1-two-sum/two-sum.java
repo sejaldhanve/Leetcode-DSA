@@ -7,9 +7,7 @@ class Solution {
                 }
                 else if(num[i]+num[j]==target){
                     int[] ans=new int[2];
-                    ans[0]=i;
-                    ans[1]=j;
-                    return ans;
+                    return new int[]{i, j};
                 }
             }
 
